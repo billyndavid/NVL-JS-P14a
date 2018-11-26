@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>java</title>
+ </head>
+ <body>
+   <h1>javascript ejemplos</h1>
+   <section>
+   <ul id ="pelis">
+   </ul>
+   <script>
+
+   	var pelis = [
+ {
+   "Nombre": "El señor de los anillos",
+   "Genero": "Acción"
+ },
+{
+   "Nombre": "Regreso al Futuro",
+   "Genero": "Acción"
+ },
+{
+   "Nombre": "Los increibles 2",
+   "Genero": "Animación"
+ },
+ {
+   "Nombre": "Origen",
+   "Genero": "Suspense"
+ },
+  {
+   "Nombre": "Shutter island",
+   "Genero": "Suspense"
+ },
+ {
+   "Nombre": "Toy story",
+   "Genero": "Animación"
+ }
+];
+
+	var ulObjectivo = document.querySelector('#pelis');
+
+		for (var x = 0 ; x < pelis.length ; x++) {
+
+		var li = document.createElement("li");
+		li.textContent = pelis[x].Nombre;
+		
+		var img = document.createElement("img");
+		img.width=50;
+		img.height = 50;
+
+		if (pelis[x].Genero == "Animación" ) {
+			img.src = "http://www.filmsite.org/images/animated-genre.jpg";
+			img.alt= "animacion";
+
+		} else if (pelis[x].Genero == "Acción" ) {
+
+			img.src = "https://image.freepik.com/icones-gratis/mao-que-lembra-um-gesto-arma_318-49552.jpg";
+			img.alt= "accion";
+		} else if (pelis[x].Genero == "Suspense" ) {
+
+			img.src = "http://stage.bookcountry.com/uploadedImages/Book_Country/Read_and_Review/Books/Genre_Map/Thriller/Suspense_Thriller/Suspense_Thriller_icon_Big.png";
+			img.alt= "suspense";
+		}
+
+		li.appendChild(img);
+		ulObjectivo.appendChild(li);
+	}
+
+  </script>
+  </section>
+ </body>
+</html>
